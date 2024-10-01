@@ -17,6 +17,10 @@ class UserViewSet(
     GenericViewSet,
 ):
     queryset = User.objects.all().order_by("-id")
+    # def get_queryset(self):
+
+    #     queryset = User.objects.all().order_by("-id")
+    #     return queryset
 
     def get_serializer_class(self):
         if self.action == "create":
